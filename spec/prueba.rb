@@ -23,3 +23,10 @@ response1 = cliente1.call(:execute, message: {'Entrada' => {'Grupo' => '2'}})
 
 
 puts response1.body
+
+
+
+cliente2 = Savon.client(wsdl:'https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones?WSDL')
+
+puts cliente2.operations
+
