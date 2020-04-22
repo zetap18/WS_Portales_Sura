@@ -40,6 +40,4 @@ response2 = cliente2.call(:execute, message: {Entrada: {
                         )
 
 
-#response2 = cliente2.call(:execute, message: {Entrada: { Moneda: {Item: '2225'}, FechaDesde: '2020/04/21', FechaHasta: '2020/04/21', Grupo: '2'}})
-
 puts response2.body
