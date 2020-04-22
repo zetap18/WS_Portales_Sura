@@ -26,7 +26,20 @@ puts response1.body
 
 
 
-cliente2 = Savon.client(wsdl:'https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones?WSDL')
+cliente2 = Savon.client(wsdl:'https://cotizaciones.bcu.gub.uy/wscotizaciones/servlet/awsbcucotizaciones?WSDL',convert_request_keys_to: :camelcase)
 
 puts cliente2.operations
 
+response2 = cliente2.call(:execute, message: {Entrada: {
+                                                        FechaDesde: '2020/04/21', 
+                                                        FechaHasta: '2020/04/21', 
+                                                        Grupo: '2',
+                                                        Moneda: {item: '2225'}, 
+                                                        }
+                                            }
+                        )
+
+
+#response2 = cliente2.call(:execute, message: {Entrada: { Moneda: {Item: '2225'}, FechaDesde: '2020/04/21', FechaHasta: '2020/04/21', Grupo: '2'}})
+
+puts response2.body
