@@ -45,7 +45,7 @@ RSpec.describe 'BCU test cotizaciones' do
                   }  
   
   
-  context 'status de la respuesta de cotizaciones' do
+  context 'codigo error de la respuesta de cotizaciones' do
                                  
     it { expect((response1.body[:wsbcucotizaciones_execute_response][:salida][:respuestastatus][:codigoerror])).to eq "0" }
   end
